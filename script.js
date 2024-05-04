@@ -54,3 +54,34 @@ const trampoline = (f, ...args) => {
 };
 
 console.log(trampoline(flattenArr(arr)));
+
+// Part 3
+
+const htmlEle = document.createElement("h1");
+const body = document.querySelector("body")
+body.appendChild(htmlEle)
+
+let isPrime = true;
+function primeNumbers(n) {
+    
+    for(i = 1; i <= n; i++) {
+        for(j = 2; j < i - 1; j++) {
+            if(i % j === 0) {
+                console.log('not a prime number: ', i);
+                isPrime = false;
+                break;
+            }
+        }
+        if(isPrime === true) {
+            console.log("is a prime number: ", i);
+            htmlEle.textContent += i;
+        }
+        isPrime = true;
+    }
+    setTimeout(() => {
+        alert("calculation is finished");
+    }, 0);
+    
+}
+
+primeNumbers(10000);
