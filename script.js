@@ -36,6 +36,8 @@ try {
     console.log(err);
 }
 
+
+// Part 2
 let arr = [0, 2, [3, 4, [5, [6], [8]]]];
 const flattenArr = (arr) => {
 
@@ -52,5 +54,3 @@ const trampoline = (f, ...args) => {
 };
 
 console.log(trampoline(flattenArr(arr)));
-
-// console.log(arr.flat().length );
